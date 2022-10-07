@@ -28,7 +28,7 @@ public class Chips extends Item {
 // METHODS
     @Override
     public String yumYumStatement() {
-        return "Crunch Crunch, Yum";
+        return "Crunch Crunch, Yum!";
     }
 
     @Override

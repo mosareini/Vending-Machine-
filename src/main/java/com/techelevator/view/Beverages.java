@@ -22,7 +22,7 @@ public class Beverages extends Item {
 // METHODS
     @Override
     public String yumYumStatement() {
-        return "Glug Glug, Yum";
+        return "Glug Glug, Yum!";
     }
 
     @Override

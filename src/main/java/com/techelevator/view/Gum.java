@@ -28,7 +28,7 @@ public class Gum extends Item {
 // METHODS
     @Override
     public String yumYumStatement() {
-        return "Chew Chew, Yum";
+        return "Chew Chew, Yum!";
     }
 
     @Override

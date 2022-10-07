@@ -5,9 +5,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ChipsTest {
+public class GumTest {
 
-    Chips testChips = new Chips("CHAAPS", 5000.00, 1);
+
+    Gum testGummies = new Gum("Gummies", 2.00, 1);
 
     @Before
     public void setUp(){}
@@ -16,42 +17,41 @@ public class ChipsTest {
     public void tearDown(){}
 
     @Test
-    public void test_Chips_GetName(){
+    public void test_Gum_GetName(){
 
         //Arrange
-        String expectedResult = "CHAAPS";
+        String expectedResult = "Gummies";
 
         //Act
-        String actualResult = testChips.getName();
+        String actualResult = testGummies.getName();
 
         //Assert
         Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    public void test_Chips_GetPrice(){
+    public void test_Gum_GetPrice(){
 
         //Arrange
-        double expectedResult = 5000.00;
+        double expectedResult = 2.00;
 
         //Act
-        double actualResult = testChips.getPrice();
+        double actualResult = testGummies.getPrice();
 
         //Assert
         Assert.assertEquals(expectedResult, actualResult, 0.1);
     }
 
     @Test
-    public void test_Chips_GetQuantity(){
+    public void test_Gum_GetQuantity(){
 
         //Arrange
         int expectedResult = 1;
 
         //Act
-        int actualResult = testChips.getQuantity();
+        int actualResult = testGummies.getQuantity();
 
         //Assert
         Assert.assertEquals(expectedResult, actualResult);
     }
-
 }

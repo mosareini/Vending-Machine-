@@ -26,7 +26,7 @@ public class Candy extends Item {
 // METHODS
     @Override
     public String yumYumStatement() {
-        return "Munch Munch, Yum";
+        return "Munch Munch, Yum!";
     }
 
     @Override
