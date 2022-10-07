@@ -2,14 +2,9 @@ package com.techelevator.view;
 
 public class Candy extends Item {
 
-// PROPERTIES
-    public int currentQty;
-
 // CONSTRUCTOR
-    public Candy(String name, double price, int currentQty) {
-        this.name =  name;
-        this.price = price;
-        this.currentQty = currentQty;
+    public Candy(String name, double price, int quantity) {
+        super(name, price, quantity);
     }
 
 // GETTERS/SETTERS
@@ -19,25 +14,25 @@ public class Candy extends Item {
     }
 
     @Override
-    public double getPrice() {
-        return super.price;
-    }
+    public double getPrice() {return super.price;}
 
     @Override
-    public void setName(String name) {
-        this.name = name;
-    }
+    public int getQuantity() {return super.quantity;}
 
-    @Override
-    void setPrice(double price) {
-        this.price = price;
+    public void setQuantity(int newQuantity){
+        this.quantity = newQuantity;
     }
 
 // METHODS
+    @Override
     public String yumYumStatement() {
         return "Munch Munch, Yum";
     }
 
+    @Override
+    public void removeOne(){
+        this.quantity--;
+    }
 }
 
 

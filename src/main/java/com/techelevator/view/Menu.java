@@ -1,5 +1,7 @@
 package com.techelevator.view;
 
+//We did not use the menu class.
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;

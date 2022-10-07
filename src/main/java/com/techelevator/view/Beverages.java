@@ -2,41 +2,31 @@ package com.techelevator.view;
 
 public class Beverages extends Item {
 
-    // PROPERTIES
-    public int currentQty;
-
-    // CONSTRUCTOR
-    public Beverages(String name, double price, int currentQty) {
-        this.name =  name;
-        this.price = price;
-        this.currentQty = currentQty;
+// CONSTRUCTOR
+    public Beverages(String name, double price, int quantity) {
+        super(name, price, quantity);
     }
 
-    // GETTERS/SETTERS
+// GETTERS/SETTERS
     @Override
     public String getName() {
-        return super.name;
+        return name;
     }
 
     @Override
-    public double getPrice() {
-        return super.price;
-    }
+    public double getPrice() {return price;}
 
     @Override
-    public void setName(String name) {
-        this.name = name;
-    }
+    public int getQuantity() {return quantity;}
 
+// METHODS
     @Override
-    void setPrice(double price) {
-        this.price = price;
-    }
-
-    // METHODS
     public String yumYumStatement() {
         return "Glug Glug, Yum";
     }
 
-
+    @Override
+    public void removeOne(){
+        this.quantity--;
+    }
 }
