@@ -1,7 +1,5 @@
 package com.techelevator;
 
-//Mo Sareini and Camille Fogel
-
 import com.techelevator.view.*;
 
 import java.io.File;
@@ -35,6 +33,7 @@ public class VendingMachineCLI {
 
 				//--instantiates all items (fully stocked), adds item to itemList Map
 				if (currentArray[3].equals("Chip")) {
+					//(name, price, quantity)
 					Chips chip = new Chips(currentArray[1], Double.parseDouble(currentArray[2]), MAX_QTY);
 					itemList.put(currentArray[0], chip);
 				} else if (currentArray[3].equals("Candy")) {
@@ -232,6 +231,24 @@ public class VendingMachineCLI {
 		}
 	}
 
+	public static void logChange(double change){
+
+		//--finds log file
+		File logFile = new File("src/main/resources/Log.txt");
+
+		//--writes to log file
+		try (PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))) {
+
+			//--gets and formats time
+			LocalDateTime currentDate = LocalDateTime.now();
+			DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss a");
+			writer.printf(dateFormat.format(currentDate) + " GIVE CHANGE: $%.2f $0.00" + "\n", change);
+
+		} catch (FileNotFoundException e) {
+			System.out.println("Cannot log transaction. Log file not found.");
+		}
+	}
+
 	public static int[] calcChange(int changeInCents){
 
 		int[] coins = new int[3];
@@ -249,25 +266,6 @@ public class VendingMachineCLI {
 
 		return coins;
 
-	}
-
-
-	public static void logChange(double change){
-
-		//--finds log file
-		File logFile = new File("src/main/resources/Log.txt");
-
-		//--writes to log file
-		try (PrintWriter writer = new PrintWriter(new FileOutputStream(logFile, true))) {
-
-			//--gets and formats time
-			LocalDateTime currentDate = LocalDateTime.now();
-			DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss a");
-			writer.printf(dateFormat.format(currentDate) + " GIVE CHANGE: $%.2f $0.00" + "\n", change);
-
-		} catch (FileNotFoundException e) {
-			System.out.println("Cannot log transaction. Log file not found.");
-		}
 	}
 }
 
